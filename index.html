@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Axis Gamepad Pro | Stealth Tech Gaming</title>
+    <meta name="description"
+        content="Axis Gamepad Pro brings gyro precision aim, advanced MOBA skill casting, and Shizuku-powered non-root touch mapping to Android 8.0+ devices.">
+    <meta property="og:title" content="Axis Gamepad Pro | Stealth Tech Gaming">
+    <meta property="og:description"
+        content="Axis Gamepad Pro brings gyro precision aim, advanced MOBA skill casting, and Shizuku-powered non-root touch mapping to Android 8.0+ devices.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/nativegyro/mapper/main/website/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axisgamepad.com">
+    <meta name="theme-color" content="#0a0a0a">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#dcb02e",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#0a0a0a",
+                        "surface": "#121212",
+                        "tactical-gold": "#D4AF37"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/stealth.css">
+    <noscript>
+        <style>
+            [data-reveal="true"] {
+                opacity: 1;
+                transform: none;
+                filter: none;
+            }
+        </style>
+    </noscript>
+    </head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+    <!-- 1. Top Ticker -->
+    <div class="glass sticky top-0 z-[60] border-b border-primary/20 overflow-hidden py-2"
+        style="background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="animate-scroll whitespace-nowrap flex gap-12 items-center">
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 32L352 32L352 96.6C451.3 110.1 529.9 188.7 543.4 288L608 288L608 352L543.4 352C529.9 451.3 451.3 529.9 352 543.4L352 608L288 608L288 543.4C188.7 529.9 110.1 451.3 96.6 352L32 352L32 288L96.6 288C110.1 188.7 188.7 110.1 288 96.6L288 32L320 32zM151.2 352C164.7 421.3 218.7 475.3 288 488.8L288 432L352 432L352 488.8C421.3 475.3 475.3 421.3 488.8 352L432 352L432 288L488.8 288C475.3 218.7 421.3 164.7 352 151.2L352 208L288 208L288 151.2C218.7 164.7 164.7 218.7 151.2 288L208 288L208 352L151.2 352zM320 256C355.3 256 384 284.7 384 320C384 355.3 355.3 384 320 384C284.7 384 256 355.3 256 320C256 284.7 284.7 256 320 256z"/></svg></div> Precision touch mapping for Android gaming
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 7L4.80061 1.43926C5.56059 0.527292 6.68638 0 7.8735 0H8V4L12 5L15 10L14.1875 11.2188C13.4456 12.3316 12.1967 13 10.8593 13H9L7 16H5L1 7ZM10 9C10.5523 9 11 8.55229 11 8C11 7.44772 10.5523 7 10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9Z"></path><path d="M10 0.465878V2.43845L12 2.93845V0H11.8735C11.2125 0 10.5704 0.163501 10 0.465878Z"></path></svg></div> Shizuku powered
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0 flex-col mt-[-1px]"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.698 48.698" xml:space="preserve" class="fill-current w-full h-full"><polygon points="47.784,13.309 24.349,0 0.914,13.309 24.349,26.698 "></polygon><polygon points="24.349,29.002 8.548,19.974 0.914,24.309 24.349,37.698 47.784,24.309 40.151,19.974 "></polygon><polygon points="24.349,40.002 8.548,30.974 0.914,35.309 24.349,48.698 47.784,35.309 40.151,30.974 "></polygon></svg></div> Hardware-level injection
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M9 7L10 0H8L2 7V9H7L6 16H8L14 9L14 7H9Z"></path></svg></div> Zero latency
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 48L80 144V208C80 352 160 496 320 592C480 496 560 352 560 208V144L320 48ZM224 208L240 208L288 272L352 272L400 208L416 208V336C416 389 373 432 320 432C267 432 224 389 224 336V208ZM280 352C288.8 352 296 344.8 296 336C296 327.2 288.8 320 280 320C271.2 320 264 327.2 264 336C264 344.8 271.2 352 280 352ZM376 336C376 327.2 368.8 320 360 320C351.2 320 344 327.2 344 336C344 344.8 351.2 352 360 352C368.8 352 376 344.8 376 336Z"/></svg></div> Rootless activation
+            </span>
+            <!-- Duplicated for seamless loop -->
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 32L352 32L352 96.6C451.3 110.1 529.9 188.7 543.4 288L608 288L608 352L543.4 352C529.9 451.3 451.3 529.9 352 543.4L352 608L288 608L288 543.4C188.7 529.9 110.1 451.3 96.6 352L32 352L32 288L96.6 288C110.1 188.7 188.7 110.1 288 96.6L288 32L320 32zM151.2 352C164.7 421.3 218.7 475.3 288 488.8L288 432L352 432L352 488.8C421.3 475.3 475.3 421.3 488.8 352L432 352L432 288L488.8 288C475.3 218.7 421.3 164.7 352 151.2L352 208L288 208L288 151.2C218.7 164.7 164.7 218.7 151.2 288L208 288L208 352L151.2 352zM320 256C355.3 256 384 284.7 384 320C384 355.3 355.3 384 320 384C284.7 384 256 355.3 256 320C256 284.7 284.7 256 320 256z"/></svg></div> Precision touch mapping for Android gaming
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 7L4.80061 1.43926C5.56059 0.527292 6.68638 0 7.8735 0H8V4L12 5L15 10L14.1875 11.2188C13.4456 12.3316 12.1967 13 10.8593 13H9L7 16H5L1 7ZM10 9C10.5523 9 11 8.55229 11 8C11 7.44772 10.5523 7 10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9Z"></path><path d="M10 0.465878V2.43845L12 2.93845V0H11.8735C11.2125 0 10.5704 0.163501 10 0.465878Z"></path></svg></div> Shizuku powered
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0 flex-col mt-[-1px]"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.698 48.698" xml:space="preserve" class="fill-current w-full h-full"><polygon points="47.784,13.309 24.349,0 0.914,13.309 24.349,26.698 "></polygon><polygon points="24.349,29.002 8.548,19.974 0.914,24.309 24.349,37.698 47.784,24.309 40.151,19.974 "></polygon><polygon points="24.349,40.002 8.548,30.974 0.914,35.309 24.349,48.698 47.784,35.309 40.151,30.974 "></polygon></svg></div> Hardware-level injection
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M9 7L10 0H8L2 7V9H7L6 16H8L14 9L14 7H9Z"></path></svg></div> Zero latency
+            </span>
+            <span class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary/80">
+                <div class="w-4 h-4 flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 48L80 144V208C80 352 160 496 320 592C480 496 560 352 560 208V144L320 48ZM224 208L240 208L288 272L352 272L400 208L416 208V336C416 389 373 432 320 432C267 432 224 389 224 336V208ZM280 352C288.8 352 296 344.8 296 336C296 327.2 288.8 320 280 320C271.2 320 264 327.2 264 336C264 344.8 271.2 352 280 352ZM376 336C376 327.2 368.8 320 360 320C351.2 320 344 327.2 344 336C344 344.8 351.2 352 360 352C368.8 352 376 344.8 376 336Z"/></svg></div> Rootless activation
+            </span>
+        </div>
+    </div>
+
+    <!-- 2. Navbar -->
+    <nav class="glass relative z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" class="h-8 lg:hidden">
+                    <text x="5" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" class="h-10 hidden lg:block">
+                    <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                    <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                </svg>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 xl:gap-10">
+                <a class="text-sm font-medium text-slate-400 hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#features">Features</a>
+                <a class="text-sm font-medium text-slate-400 hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#why-axis">Why Axis</a>
+                <a class="text-sm font-medium text-slate-400 hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#setup">Setup</a>
+                <div class="relative group">
+                    <a class="text-sm font-medium text-slate-400 group-hover:text-primary transition-colors uppercase tracking-widest flex items-center gap-1"
+                        href="docs/index.html">
+                        Docs
+                        <svg class="w-4 h-4 fill-current transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="absolute top-full left-0 pt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-[70]">
+                        <div class="glass chamfer-sm p-2 flex flex-col">
+                            <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                href="docs/index.html">Overview</a>
+                            <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                href="docs/setup.html">Installation &amp; Setup</a>
+                            <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                href="docs/mapping.html">Mapping Guide</a>
+                            <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                href="docs/troubleshooting.html">Troubleshooting</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="flex h-10 w-10 shrink-0 items-center justify-center text-white lg:hidden"
+                id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+            </button>
+            <button type="button"
+                class="hidden shrink-0 items-center justify-center bg-primary hover:bg-primary/85 text-background-dark text-xs font-black uppercase px-6 py-3 chamfer-sm transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] text-center leading-[16px] xl:inline-flex font-display">
+                Coming Soon on Google Play
+            </button>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="hidden flex-col gap-4 px-6 pb-6 pt-2 border-t border-white/10 lg:hidden" id="mobile-nav">
+            <a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 block w-fit"
+                href="#features">Features</a>
+            <a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 block w-fit"
+                href="#why-axis">Why Axis</a>
+            <a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 block w-fit"
+                href="#setup">Setup</a>
+
+            <!-- Mobile Nav Docs Submenu -->
+            <div class="flex flex-col gap-2 pt-2 border-t border-white/5">
+                <span
+                    class="text-slate-300 text-sm font-medium transition-colors py-2 flex items-center gap-1 uppercase tracking-widest text-primary">
+                    Docs <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                </span>
+                <div class="flex flex-col gap-3 pl-4 border-l border-white/10 ml-2 mt-1">
+                    <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="docs/index.html">Overview</a>
+                    <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="docs/setup.html">Installation &amp; Setup</a>
+                    <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="docs/mapping.html">Mapping Guide</a>
+                    <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="docs/troubleshooting.html">Troubleshooting</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Hero Section -->
+    <section class="relative overflow-hidden px-4 sm:px-6 pb-16 pt-12 md:pb-32 md:pt-24">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50">
+        </div>
+        <div class="max-w-5xl mx-auto text-center relative z-10" data-reveal="true">
+            <h1
+                class="text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-black mb-5 md:mb-8 leading-[0.9] text-gradient tracking-tighter uppercase">
+                Play touch games <span class="block md:inline">with real precision.</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8 md:mb-12 font-light leading-relaxed">
+                Axis Gamepad Pro combines gyro aim, advanced skill casting, and direct touch mapping for Android players
+                who need more control than basic tap overlays provide.
+            </p>
+            <div class="flex flex-col items-center gap-6 sm:gap-8">
+                <!-- Rotating Text Placeholder -->
+                <div class="flex min-h-[3.5rem] w-full items-center justify-center md:h-12">
+                    <span
+                        class="max-w-2xl border-y border-primary/30 px-3 py-2 text-center text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-primary whitespace-normal sm:px-6 md:px-8 md:text-lg sm:whitespace-nowrap">
+                        Low-latency system touch injection powered by Shizuku
+                    </span>
+                </div>
+                <!-- Video Trailer Area -->
+                <div class="relative mx-auto w-full max-w-4xl aspect-video bg-surface chamfer border border-primary/20 shadow-[0_0_50px_rgba(212,175,55,0.15)] group cursor-pointer overflow-hidden"
+                    data-reveal="true" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700"
+                        data-alt="Futuristic gaming setup with dark cinematic lighting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-sac-sz3LUEYQmOHmDMRip-8nw3rrSVO_1B3AHWxeOs-dBWW-L_dC8z5cWi0qU3SQ9KRac1zIFAUzY_ygokaya_nkCCe3HtN7uWIxs5ixn-2X9N_adMt_jpgU3xY5lgLS4amqFvTZGRFvSkVjk2XwjKfaM6ZmjJQoLIl51Wl2VJr6agfeDdI5Tu2G8pPsL4hFH5R_RaKRkidbaBhJPt68aP54uu0xyKwC9mOAsvg4pUZYsT-r71WJA5M8vhsHGBWAm3j0ZUtMyFaw')">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.6)] group-hover:scale-110 transition-transform">
+                            <span
+                                class="material-symbols-sharp text-background-dark text-3xl md:text-5xl fill-current">play_arrow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Controller Support Strip -->
+    <section class="bg-surface/50 border-y border-white/5 py-8 md:py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-16 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
+                data-reveal="true">
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <svg class="w-7 h-7 md:w-10 md:h-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5.41931 19.5275C7.17681 21.0675 9.48181 22 12.001 22C14.5226 22 16.8251 21.0675 18.586 19.5275C20.1501 17.9342 14.9893 12.27 12.001 10.0133C9.01598 12.27 3.85181 17.9342 5.41931 19.5275ZM14.7193 7.5225C16.8026 9.99 20.956 16.1167 19.7826 18.2825C21.1693 16.5667 22.001 14.3842 22.001 12.0033C22.001 9.22 20.8635 6.70167 19.026 4.89C19.026 4.89 19.0035 4.87167 18.9576 4.855C18.9051 4.83667 18.831 4.8175 18.7235 4.8175C18.2301 4.8175 17.0693 5.17917 14.7193 7.5225ZM5.04598 4.855C4.99848 4.87167 4.97764 4.88917 4.97431 4.89C3.13848 6.70167 2.00098 9.22 2.00098 12.0033C2.00098 14.3817 2.83264 16.5642 4.21848 18.2808C3.05098 16.11 7.20098 9.98833 9.28514 7.5225C6.93514 5.17833 5.77181 4.81833 5.28014 4.81833C5.17098 4.81833 5.09431 4.83583 5.04598 4.85667V4.855ZM12.001 4.95917C12.001 4.95917 9.54681 3.52333 7.63014 3.455C6.87764 3.4275 6.41848 3.70083 6.36264 3.7375C8.15014 2.53833 10.0501 2 11.9876 2H12.001C13.946 2 15.8385 2.53833 17.6393 3.7375C17.5826 3.69917 17.1268 3.4275 16.3726 3.455C14.456 3.52333 12.001 4.95417 12.001 4.95417V4.95917Z"></path></svg>
+                    <span class="text-sm md:text-xl font-bold uppercase tracking-widest">Xbox Series</span>
+                </div>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <svg class="w-7 h-7 md:w-10 md:h-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 7.5V2H9v5.5l3 3zM7.5 9H2v6h5.5l3-3zM9 16.5V22h6v-5.5l-3-3zM16.5 9l-3 3l3 3H22V9z"/></svg>
+                    <span class="text-sm md:text-xl font-bold uppercase tracking-widest">DualSense</span>
+                </div>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <svg class="w-7 h-7 md:w-10 md:h-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L15 6H13V13.381L16 11.882L15.999 11H15V7H19V11H17.999L18 13.118L13 15.618L13.0009 17.171C14.1656 17.5831 15 18.6941 15 20C15 21.6569 13.6569 23 12 23C10.3431 23 9 21.6569 9 20C9 18.813 9.68934 17.7871 10.6895 17.3006L6 14L5.99892 11.7318C5.40172 11.3858 5 10.7398 5 10C5 8.89543 5.89543 8 7 8C8.10457 8 9 8.89543 9 10C9 10.7403 8.59783 11.3866 8.00007 11.7324L8 13L11 15.086V6H9L12 1Z"></path></svg>
+                    <span class="text-sm md:text-xl font-bold uppercase tracking-widest">Universal HID</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Features Grid -->
+    <section class="px-4 sm:px-6 py-16 md:py-24 lg:py-32" id="features">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10 sm:mb-12 md:mb-20" data-reveal="true">
+                <span
+                    class="inline-flex items-center gap-2 sm:gap-3 text-primary text-[10px] sm:text-sm font-display font-black uppercase tracking-[0.2em] sm:tracking-[0.35em]">
+                    <span class="h-px w-6 sm:w-8 bg-primary/70"></span>
+                    Primary capabilities
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-black mt-3 sm:mt-4 uppercase tracking-tighter">Built for the inputs basic
+                    mappers miss</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all" data-reveal="true"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 32L352 32L352 96.6C451.3 110.1 529.9 188.7 543.4 288L608 288L608 352L543.4 352C529.9 451.3 451.3 529.9 352 543.4L352 608L288 608L288 543.4C188.7 529.9 110.1 451.3 96.6 352L32 352L32 288L96.6 288C110.1 188.7 188.7 110.1 288 96.6L288 32L320 32zM151.2 352C164.7 421.3 218.7 475.3 288 488.8L288 432L352 432L352 488.8C421.3 475.3 475.3 421.3 488.8 352L432 352L432 288L488.8 288C475.3 218.7 421.3 164.7 352 151.2L352 208L288 208L288 151.2C218.7 164.7 164.7 218.7 151.2 288L208 288L208 352L151.2 352zM320 256C355.3 256 384 284.7 384 320C384 355.3 355.3 384 320 384C284.7 384 256 355.3 256 320C256 284.7 284.7 256 320 256z"/></svg></div>
+                    </div>
+                    <span
+                        class="bg-primary/20 text-primary text-[8px] sm:text-[10px] font-black px-2 py-1 uppercase tracking-widest mb-3 sm:mb-4 inline-block">Signature
+                        feature</span>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Gyro Precision Aim</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Convert your controller's physical gyroscope
+                        into smooth, high-resolution touch movement for pixel-perfect headshots.</p>
+                    <div class="pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">V-LATENCY: 1.2ms</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">REFRESH: 120HZ</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all flex flex-col"
+                    data-reveal="true" style="transition-delay: 200ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M0 128H640V512H0V128z" fill="currentColor"/><path d="M192 240H144V296H88V344H144V400H192V344H248V296H192V240z" fill="#0a0a0a"/><rect x="400" y="336" width="64" height="64" fill="#0a0a0a"/><rect x="464" y="240" width="64" height="64" fill="#0a0a0a"/></svg></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">MOBA Skill Casting</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Smart-casting for complex skill directions.
+                        Use right-stick to aim abilities with configurable sensitivity and range.</p>
+                    <div class="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">LOGIC: SMARTCAST</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">SUPPORT: ALL MOBA</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all flex flex-col"
+                    data-reveal="true" style="transition-delay: 300ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg class="fill-current w-full h-full" viewBox="0 -8 72 72" xmlns="http://www.w3.org/2000/svg"><path d="M56.74,20.89l-1-2.31c3.33-7.53,3.11-7.75,2.46-8.41L54,6l-.42-.35h-.49c-.26,0-1,0-7.51,2.93l-2.38-1C40.09,0,39.77,0,38.87,0h-6c-.9,0-1.25,0-4.1,7.66l-2.37,1C22,6.78,19.45,5.84,18.75,5.84l-.56,0-4.58,4.49c-.7.65-.94.88,2.58,8.3l-1,2.3c-7.79,3-7.79,3.3-7.79,4.23v5.89c0,.92,0,1.25,7.82,4l1,2.29c-3.33,7.53-3.11,7.76-2.46,8.41L18,50l.42.37h.5c.25,0,1,0,7.5-3l2.38,1C31.9,56,32.21,56,33.12,56h6c.92,0,1.25,0,4.11-7.66l2.39-1c4.37,1.85,6.93,2.79,7.61,2.79l.57,0,4.62-4.52c.66-.66.89-.89-2.62-8.28l1-2.3c7.81-3,7.81-3.33,7.81-4.23V24.93C64.57,24,64.57,23.68,56.74,20.89ZM36,37.8A9.8,9.8,0,1,1,46,28,9.91,9.91,0,0,1,36,37.8Z"></path></svg></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">System-Level Injection</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Direct hardware injection means the game sees
+                        real touch events, not emulated overlay clicks. Invisible to detection.</p>
+                    <div class="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">LAYER: KERNEL-LITE</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">ANTI-BAN: NATIVE</span>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all" data-reveal="true"
+                    style="transition-delay: 400ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 7L4.80061 1.43926C5.56059 0.527292 6.68638 0 7.8735 0H8V4L12 5L15 10L14.1875 11.2188C13.4456 12.3316 12.1967 13 10.8593 13H9L7 16H5L1 7ZM10 9C10.5523 9 11 8.55229 11 8C11 7.44772 10.5523 7 10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9Z"></path><path d="M10 0.465878V2.43845L12 2.93845V0H11.8735C11.2125 0 10.5704 0.163501 10 0.465878Z"></path></svg></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Shizuku Workflow</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">No root required. Active Axis once via
+                        Shizuku and play until your next reboot. Secure, reliable, and system-native.</p>
+                    <div class="pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">OS: ANDROID 11+</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">PERM: ADB SHELL</span>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all" data-reveal="true"
+                    style="transition-delay: 500ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg viewBox="0 0 24 24" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M11,11H3V3H11V11ZM21,3H13V11H21V3ZM3,21H11V13H3V21ZM21,13H13V21H21V13Z" /></svg></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Layout Library</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Download community-made layouts for thousands
+                        of games. Just connect, import, and start dominating the ladder.</p>
+                    <div class="pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">REPO: CLOUD SYNC</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">COUNT: 5000+</span>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass p-5 sm:p-6 md:p-8 chamfer relative group hover:border-primary/40 transition-all" data-reveal="true"
+                    style="transition-delay: 600ms;">
+                    <div
+                        class="mb-4 sm:mb-6 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center border border-primary/20 bg-primary/10 shadow-[inset_0_0_20px_rgba(212,175,55,0.2)] chamfer-sm">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 text-primary flex items-center justify-center"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M9 7L10 0H8L2 7V9H7L6 16H8L14 9L14 7H9Z"></path></svg></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Rapid Actions</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Configure macros, rapid fire, and toggle
+                        buttons without leaving the game. On-the-fly tuning for competitive play.</p>
+                    <div class="pt-6 border-t border-white/5 flex flex-wrap gap-4">
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">ENGINE: MACRO 2.0</span>
+                        <span class="text-[10px] text-slate-500 font-mono uppercase">TICK: 1000HZ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Comparison Section -->
+    <section class="px-4 sm:px-6 py-16 md:py-24 lg:py-32 bg-surface/30" id="why-axis">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10 sm:mb-12 md:mb-16" data-reveal="true">
+                <span
+                    class="inline-flex items-center gap-2 sm:gap-3 text-primary text-[10px] sm:text-sm font-display font-black uppercase tracking-[0.2em] sm:tracking-[0.35em]">
+                    <span class="h-px w-6 sm:w-8 bg-primary/70"></span>
+                    Why choose Axis
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-black mt-3 sm:mt-4 uppercase tracking-tighter">Purpose-built for complex
+                    mobile controls</h2>
+            </div>
+            <div class="glass chamfer overflow-hidden scroll-fade" data-reveal="true" style="transition-delay: 200ms;">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[700px] border-collapse text-left">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="p-4 sm:p-6 text-xs font-black uppercase tracking-widest text-slate-500">
+                                    Capability
+                                </th>
+                                <th class="p-4 sm:p-6 text-xs font-black uppercase tracking-widest text-primary border-x border-primary/20"
+                                    style="background: linear-gradient(180deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03))">
+                                    Axis Gamepad Pro</th>
+                                <th
+                                    class="p-4 sm:p-6 text-xs font-black uppercase tracking-widest text-slate-500 text-center">
+                                    Octopus / Panda</th>
+                                <th
+                                    class="p-4 sm:p-6 text-xs font-black uppercase tracking-widest text-slate-500 text-center">
+                                    Mantis Gamepad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-4 sm:p-6 font-bold uppercase tracking-tight">Gyro precision aim turning
+                                </td>
+                                <td class="p-4 sm:p-6 text-center border-x border-primary/10 text-slate-300"
+                                    style="background: rgba(212, 175, 55, 0.03)">✅ Yes</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">❌ No</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">⚠️ Basic</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-4 sm:p-6 font-bold uppercase tracking-tight">MOBA casting
+                                    (Drag/Flick/Directional)
+                                </td>
+                                <td class="p-4 sm:p-6 text-center border-x border-primary/10 text-slate-300"
+                                    style="background: rgba(212, 175, 55, 0.03)">✅ 5 Modes</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">❌ No</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">✅ Yes</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-4 sm:p-6 font-bold uppercase tracking-tight">Touch delivery path</td>
+                                <td class="p-4 sm:p-6 text-center border-x border-primary/10 italic text-primary font-bold"
+                                    style="background: rgba(212, 175, 55, 0.03)">✅ Shizuku System APIs</td>
+                                <td class="p-4 sm:p-6 text-center italic text-slate-500">⚠️ Emulation/Cloning</td>
+                                <td class="p-4 sm:p-6 text-center italic text-slate-500">✅ ADB/Overlay</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-4 sm:p-6 font-bold uppercase tracking-tight">Fast no-root setup</td>
+                                <td class="p-4 sm:p-6 text-center border-x border-primary/10 text-slate-300"
+                                    style="background: rgba(212, 175, 55, 0.03)">✅ Android 11+ Wireless Debug</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">⚠️ Varies</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">✅ Yes</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 sm:p-6 font-bold uppercase tracking-tight">Visual crosshair overlay</td>
+                                <td class="p-4 sm:p-6 text-center border-x border-primary/10 text-slate-300"
+                                    style="background: rgba(212, 175, 55, 0.03)">✅ Built-in</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">❌ No</td>
+                                <td class="p-4 sm:p-6 text-center text-slate-500">❌ No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Setup Guide -->
+    <section class="px-4 sm:px-6 py-16 md:py-24 lg:py-32" id="setup">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10 sm:mb-12 md:mb-20" data-reveal="true">
+                <span
+                    class="inline-flex items-center gap-2 sm:gap-3 text-primary text-[10px] sm:text-sm font-display font-black uppercase tracking-[0.2em] sm:tracking-[0.35em]">
+                    <span class="h-px w-6 sm:w-8 bg-primary/70"></span>
+                    Setup &amp; requirements
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-black mt-3 sm:mt-4 uppercase tracking-tighter">Start playing in minutes
+                </h2>
+            </div>
+            <div class="mb-12 md:mb-20 grid gap-4 sm:gap-6 md:grid-cols-2 lg:gap-8">
+                <div class="bg-surface p-5 sm:p-6 md:p-8 border border-white/5 chamfer" data-reveal="true"
+                    style="transition-delay: 100ms;">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3 uppercase tracking-widest">
+                        <div class="w-5 h-5 sm:w-6 sm:h-6 text-primary flex items-center justify-center"><svg viewBox="0 0 16 16" class="fill-current w-full h-full" xmlns="http://www.w3.org/2000/svg"><path d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z"></path><path d="M12.5 11.5L11.0858 10.0858L13.1716 8L11.0858 5.91422L12.5 4.5L16 8L12.5 11.5Z"></path><path d="M2.82843 8L4.91421 10.0858L3.5 11.5L0 8L3.5 4.5L4.91421 5.91422L2.82843 8Z"></path></svg></div> System Requirements
+                    </h3>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Android 11.0 or higher
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Wireless Debugging
+                            support</li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> 100MB free storage</li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Bluetooth 5.0
+                            recommended</li>
+                    </ul>
+                </div>
+                <div class="bg-surface p-5 sm:p-6 md:p-8 border border-white/5 chamfer" data-reveal="true"
+                    style="transition-delay: 200ms;">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3 uppercase tracking-widest">
+                        <div class="w-5 h-5 sm:w-6 sm:h-6 text-primary flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="fill-current w-full h-full"><path d="M320 48L80 144V208C80 352 160 496 320 592C480 496 560 352 560 208V144L320 48ZM224 208L240 208L288 272L352 272L400 208L416 208V336C416 389 373 432 320 432C267 432 224 389 224 336V208ZM280 352C288.8 352 296 344.8 296 336C296 327.2 288.8 320 280 320C271.2 320 264 327.2 264 336C264 344.8 271.2 352 280 352ZM376 336C376 327.2 368.8 320 360 320C351.2 320 344 327.2 344 336C344 344.8 351.2 352 360 352C368.8 352 376 344.8 376 336Z"/></svg></div> Activation Options
+                    </h3>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Shizuku (Recommended /
+                            Rootless)</li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Magisk/KernelSU (Rooted)
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> PC Activation (ADB Mode)
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-primary">•</span> Wireless ADB Script</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid gap-6 sm:gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3 lg:gap-12 relative">
+                <div
+                    class="hidden xl:block absolute top-8 sm:top-10 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0">
+                </div>
+                <div class="relative text-center z-10" data-reveal="true" style="transition-delay: 100ms;">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-black text-primary mx-auto mb-4 sm:mb-6 md:mb-8 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        01</div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-widest">Activate</h4>
+                    <p class="text-slate-500 text-xs sm:text-sm">Launch Shizuku or grant Root permissions to initialize Axis
+                        engine.</p>
+                </div>
+                <div class="relative text-center z-10" data-reveal="true" style="transition-delay: 200ms;">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-black text-primary mx-auto mb-4 sm:mb-6 md:mb-8 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        02</div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-widest">Connect</h4>
+                    <p class="text-slate-500 text-xs sm:text-sm">Pair your HID-compatible controller via Bluetooth or USB-C.</p>
+                </div>
+                <div class="relative text-center z-10" data-reveal="true" style="transition-delay: 300ms;">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-black text-primary mx-auto mb-4 sm:mb-6 md:mb-8 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        03</div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-widest">Map &amp; Play</h4>
+                    <p class="text-slate-500 text-xs sm:text-sm">Import a preset or map your own buttons. Drop into the game.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ Section -->
+    <section class="px-4 sm:px-6 py-16 md:py-24 lg:py-32 bg-surface/30">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl sm:text-4xl font-black mb-8 md:mb-12 uppercase tracking-tighter text-center" data-reveal="true">Frequently
+                Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="glass chamfer group" data-reveal="true" style="transition-delay: 100ms;">
+                    <summary
+                        class="p-4 sm:p-6 cursor-pointer list-none flex justify-between items-center sm:items-start gap-3 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-200">
+                        Can I get banned for using Axis?
+                        <span class="material-symbols-sharp text-lg shrink-0 group-open:rotate-180 transition-transform text-primary mt-0">expand_more</span>
+                    </summary>
+                    <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3 sm:pt-4 mt-2">
+                        Axis uses system-level touch injection that is identical to real hardware touch signals. It does
+                        not modify game files or inject code into the game process, making it significantly safer than
+                        traditional overlay mappers.
+                    </div>
+                </details>
+                <details class="glass chamfer group" data-reveal="true" style="transition-delay: 200ms;">
+                    <summary
+                        class="p-4 sm:p-6 cursor-pointer list-none flex justify-between items-center sm:items-start gap-3 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-200">
+                        Which controllers are supported?
+                        <span class="material-symbols-sharp text-lg shrink-0 group-open:rotate-180 transition-transform text-primary mt-0">expand_more</span>
+                    </summary>
+                    <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3 sm:pt-4 mt-2">
+                        Any controller that is recognized as an HID device by Android will work. This includes all
+                        modern Xbox, PlayStation, and 8BitDo controllers, as well as many mobile-specific gamepads like
+                        Razer Kishi and Gamesir.
+                    </div>
+                </details>
+                <details class="glass chamfer group" data-reveal="true" style="transition-delay: 300ms;">
+                    <summary
+                        class="p-4 sm:p-6 cursor-pointer list-none flex justify-between items-center sm:items-start gap-3 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-200">
+                        Is Root really not required?
+                        <span class="material-symbols-sharp text-lg shrink-0 group-open:rotate-180 transition-transform text-primary mt-0">expand_more</span>
+                    </summary>
+                    <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3 sm:pt-4 mt-2">
+                        Correct. By leveraging Shizuku, Axis can gain the necessary system permissions to inject touch
+                        events without needing a full device root. This keeps your device secure and your banking apps
+                        working.
+                    </div>
+                </details>
+                <details class="glass chamfer group" data-reveal="true" style="transition-delay: 400ms;">
+                    <summary
+                        class="p-4 sm:p-6 cursor-pointer list-none flex justify-between items-center sm:items-start gap-3 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-200">
+                        How much input lag should I expect?
+                        <span class="material-symbols-sharp text-lg shrink-0 group-open:rotate-180 transition-transform text-primary mt-0">expand_more</span>
+                    </summary>
+                    <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3 sm:pt-4 mt-2">
+                        Our injection engine is optimized for sub-2ms processing time. Your total latency will mostly
+                        depend on your controller's Bluetooth connection (typically 4-12ms). For competitive play, USB-C
+                        connection is recommended.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Professional Footer -->
+    <footer class="bg-background-dark border-t border-white/5 px-4 sm:px-6 pb-10 pt-12 md:pt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="flex items-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" class="h-7 sm:hidden">
+                        <text x="5" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" class="h-8 hidden sm:block">
+                        <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                        <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                    </svg>
+                </div>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+                    The next generation of precision touch mapping. Redefining what mobile gaming control looks like for
+                    professional players.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                        href="#">
+                        <span class="material-symbols-sharp text-xl">share</span>
+                    </a>
+                    <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                        href="#">
+                        <span class="material-symbols-sharp text-xl">forum</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#features">Features Overview</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#setup">Setup Guide</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="docs/index.html">Documentation</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Community Layouts</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Terms of Service</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Network</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Support Portal</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">Developer API</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                            href="#">System Status</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto border-t border-white/5 pt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-slate-600 text-xs uppercase tracking-widest">© 2026 AXIS GAMEPAD PRO. All rights reserved.
+            </p>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-slate-500 text-xs uppercase tracking-widest">Server Status: Operational</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 10. Floating CTA -->
+    <button type="button"
+        class="fixed bottom-4 left-4 right-4 z-[100] flex items-center justify-center gap-3 bg-primary px-5 h-12 sm:h-14 text-xs font-black uppercase tracking-widest text-background-dark chamfer-sm shadow-[0_10px_30px_rgba(212,175,55,0.4)] transition-all group hover:bg-primary/90 sm:bottom-6 sm:left-auto sm:right-6 sm:px-8 sm:text-sm font-display">
+        <span class="mt-px">Coming Soon</span>
+        <span class="material-symbols-sharp transition-transform group-hover:translate-x-1 !text-base sm:!text-lg">arrow_right_alt</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Documentation Overview | Axis Gamepad Pro</title>
+    <meta name="description"
+        content="Explore the Axis Gamepad Pro documentation hub for setup, mapping, troubleshooting, and workflow guidance." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37",
+                        "background-dark": "#0A0A0A",
+                        surface: "#121212",
+                        "card-dark": "#121212",
+                        "border-dark": "#1C1C1C",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        glow: "0 0 30px rgba(212, 175, 55, 0.16)",
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/stealth.css">
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 32%),
+                #0A0A0A;
+        }
+
+        .axis-grid {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center;
+        }
+    </style>
+    </head>
+
+<body class="bg-background-dark font-body text-slate-300 antialiased overflow-x-hidden selection:bg-primary/20">
+    <div class="relative min-h-screen axis-grid">
+        <nav class="glass sticky top-0 z-50 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+                <a href="../index.html" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" class="h-8 lg:hidden">
+                        <text x="5" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" class="h-10 hidden lg:block">
+                        <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                        <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                    </svg>
+                </a>
+                <div class="hidden lg:flex items-center gap-8 xl:gap-10">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-widest"
+                        href="../index.html">HOME</a>
+                    <div class="relative group">
+                        <a class="text-sm font-medium text-primary uppercase tracking-widest flex items-center gap-1"
+                            href="index.html">
+                            Docs
+                            <svg class="w-4 h-4 fill-current transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                        </a>
+                        <div
+                            class="absolute top-full left-0 pt-2 w-60 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-[70]">
+                            <div class="glass chamfer-sm p-2 flex flex-col">
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-primary bg-white/5 transition-colors"
+                                    href="index.html">Overview</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="setup.html">Installation &amp; Setup</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="mapping.html">Mapping Guide</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="troubleshooting.html">Troubleshooting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="flex h-10 w-10 shrink-0 items-center justify-center text-white lg:hidden" id="mobile-menu-btn"
+                    aria-label="Toggle navigation" aria-expanded="false">
+                    <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+                </button>
+                <button type="button"
+                    class="hidden shrink-0 items-center justify-center bg-primary px-6 py-3 text-center text-xs font-black uppercase leading-[16px] text-background-dark shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all hover:bg-primary/85 xl:inline-flex chamfer-sm font-display">
+                    Coming Soon
+                </button>
+            </div>
+            <div class="hidden flex-col gap-4 border-t border-white/10 px-6 pb-6 pt-2 lg:hidden" id="mobile-nav">
+                <a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 block w-fit"
+                    href="../index.html">HOME</a>
+                <div class="flex flex-col gap-2 pt-2 border-t border-white/5">
+                    <span class="text-primary text-sm font-medium transition-colors py-2 flex items-center gap-1 uppercase tracking-widest">
+                        Docs <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                    </span>
+                    <div class="flex flex-col gap-3 pl-4 border-l border-white/10 ml-2 mt-1">
+                        <a class="text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="index.html">Overview</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="setup.html">Installation &amp; Setup</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="mapping.html">Mapping Guide</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="troubleshooting.html">Troubleshooting</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="px-6 pb-24 pt-10">
+            <div class="max-w-7xl mx-auto">
+                <section class="mb-24 grid items-center gap-10 py-8 lg:grid-cols-[1.05fr_0.95fr] xl:gap-12">
+                    <div data-reveal="true">
+                        <div class="inline-flex items-center gap-2 text-primary font-display font-bold text-sm tracking-[0.3em] uppercase">
+                            <span class="h-px w-8 bg-primary"></span>
+                            Documentation Hub
+                        </div>
+                        <h1 class="mt-6 font-display text-5xl md:text-7xl font-bold leading-[0.9] tracking-tighter uppercase text-white">
+                            Overview <span class="text-primary">of the platform</span>
+                        </h1>
+                        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+                            Axis Gamepad Pro combines Shizuku-powered system touch injection, controller mapping, gyro-aware
+                            aiming, and advanced action workflows into one Android control stack. Use this page as the
+                            starting point before moving into setup, mapping, and troubleshooting.
+                        </p>
+                        <div class="mt-8 grid max-w-3xl gap-4 md:grid-cols-3">
+                            <div class="glass chamfer-sm p-4">
+                                <div class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Input Path</div>
+                                <div class="mt-2 text-sm text-white font-semibold">System-level touch</div>
+                            </div>
+                            <div class="glass chamfer-sm p-4">
+                                <div class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Activation</div>
+                                <div class="mt-2 text-sm text-white font-semibold">Shizuku / ADB-ready</div>
+                            </div>
+                            <div class="glass chamfer-sm p-4">
+                                <div class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Workflow</div>
+                                <div class="mt-2 text-sm text-white font-semibold">Map, calibrate, deploy</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-reveal="true"
+                        class="relative overflow-hidden glass chamfer min-h-[320px] border border-border-dark shadow-glow sm:min-h-[380px] lg:min-h-[420px]">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent"></div>
+                        <img alt="Axis setup and controller workflow preview"
+                            class="h-full w-full object-cover opacity-55"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSVGAOrvWM5JmKRLhLaQmIoI3c0aiOrOdqrkygtFtB-em-su_AB-O_nKOST9wkdIcUC-y7h_GOKA8lmAZtAdMmRwnRcoIeOqV_kl3P_CofSnW9fDAV4ChW8BYutvnOF0zCpD9F9FnXFw5HZdpaHtmm1ZUrpS4_za2OslN8RfOIxM1Vp8-mnfmoZxrUpF0b-pErbDZlVo5R3I3nvPDAITGbry4PVRGmA5jst8NEto5PBlHPBrblaet_Y_mXPl7Zz5oP-LDPEPbS1bz" />
+                        <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                            <div class="text-[10px] uppercase tracking-[0.25em] text-primary font-bold">Overview Snapshot</div>
+                            <h2 class="mt-3 text-2xl font-display font-bold uppercase tracking-tight text-white">Read once,
+                                launch faster</h2>
+                            <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-300">
+                                The docs path is simple: activate permissions, connect your controller, map the layout, then
+                                fine tune with calibration and troubleshooting references.
+                            </p>
+                            <div class="mt-5 flex flex-wrap gap-3 text-[11px] uppercase tracking-widest">
+                                <span class="border border-primary/30 bg-primary/10 px-3 py-2 text-primary">Rootless path</span>
+                                <span class="border border-white/10 bg-black/30 px-3 py-2 text-slate-300">Gyro ready</span>
+                                <span class="border border-white/10 bg-black/30 px-3 py-2 text-slate-300">MOBA support</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-24" data-reveal="true">
+                    <div class="mb-8 sm:mb-12 flex items-center gap-3 sm:gap-4">
+                        <span class="text-primary text-xs sm:text-sm font-display font-bold">00</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold uppercase tracking-widest text-white">Start here</h2>
+                        <div class="h-px flex-1 bg-white/10"></div>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                        <a href="setup.html" class="glass chamfer p-6 sm:p-8 group hover:border-primary/40 transition-colors block">
+                            <div class="flex items-center justify-between mb-6 sm:mb-8">
+                                <span class="text-primary font-display text-2xl sm:text-3xl font-black">01</span>
+                                <span class="material-symbols-sharp text-primary/60 text-2xl sm:text-[32px]">settings</span>
+                            </div>
+                            <h3 class="text-white font-display text-xl sm:text-2xl font-bold uppercase tracking-tight">Installation
+                                &amp; Setup</h3>
+                            <p class="mt-3 sm:mt-4 text-xs sm:text-sm leading-relaxed text-slate-400">Prepare Android, enable the required
+                                permissions, and start the Axis service with the recommended activation path.</p>
+                            <span class="mt-4 sm:mt-6 inline-flex items-center gap-2 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest">Open
+                                guide <span class="material-symbols-sharp text-xs sm:text-sm">arrow_forward</span></span>
+                        </a>
+                        <a href="mapping.html" class="glass chamfer p-6 sm:p-8 group hover:border-primary/40 transition-colors block">
+                            <div class="flex items-center justify-between mb-6 sm:mb-8">
+                                <span class="text-primary font-display text-2xl sm:text-3xl font-black">02</span>
+                                <span class="material-symbols-sharp text-primary/60 text-2xl sm:text-[32px]">videogame_asset</span>
+                            </div>
+                            <h3 class="text-white font-display text-xl sm:text-2xl font-bold uppercase tracking-tight">Mapping Guide</h3>
+                            <p class="mt-3 sm:mt-4 text-xs sm:text-sm leading-relaxed text-slate-400">Build layouts for buttons, camera,
+                                movement, gyro aim, and specialized actions for shooters or MOBA titles.</p>
+                            <span class="mt-4 sm:mt-6 inline-flex items-center gap-2 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest">Open
+                                guide <span class="material-symbols-sharp text-xs sm:text-sm">arrow_forward</span></span>
+                        </a>
+                        <a href="troubleshooting.html"
+                            class="glass chamfer p-6 sm:p-8 group hover:border-primary/40 transition-colors block">
+                            <div class="flex items-center justify-between mb-6 sm:mb-8">
+                                <span class="text-primary font-display text-2xl sm:text-3xl font-black">03</span>
+                                <span class="material-symbols-sharp text-primary/60 text-2xl sm:text-[32px]">info</span>
+                            </div>
+                            <h3 class="text-white font-display text-xl sm:text-2xl font-bold uppercase tracking-tight">Troubleshooting</h3>
+                            <p class="mt-3 sm:mt-4 text-xs sm:text-sm leading-relaxed text-slate-400">Resolve permission issues, controller
+                                detection problems, overlay conflicts, and service start failures quickly.</p>
+                            <span class="mt-4 sm:mt-6 inline-flex items-center gap-2 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest">Open
+                                guide <span class="material-symbols-sharp text-xs sm:text-sm">arrow_forward</span></span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="mb-24" data-reveal="true">
+                    <div class="mb-8 sm:mb-12 flex items-center gap-3 sm:gap-4">
+                        <span class="text-primary text-xs sm:text-sm font-display font-bold">01</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold uppercase tracking-widest text-white">Core platform
+                            highlights</h2>
+                        <div class="h-px flex-1 bg-white/10"></div>
+                    </div>
+                    <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                        <div class="bg-card-dark border border-border-dark p-6 sm:p-8 chamfer hover:border-primary/40 transition-colors">
+                            <span class="material-symbols-sharp text-primary text-2xl sm:text-3xl">touch_app</span>
+                            <h3 class="mt-4 sm:mt-6 text-white font-display font-bold uppercase tracking-widest text-xs sm:text-sm">System touch
+                                delivery</h3>
+                            <p class="mt-2 sm:mt-3 text-[10px] sm:text-xs leading-relaxed text-slate-400">Axis is designed around direct touch-style
+                                event delivery instead of basic floating overlay clicks.</p>
+                        </div>
+                        <div class="bg-card-dark border border-border-dark p-6 sm:p-8 chamfer hover:border-primary/40 transition-colors">
+                            <span class="material-symbols-sharp text-primary text-2xl sm:text-3xl">360</span>
+                            <h3 class="mt-4 sm:mt-6 text-white font-display font-bold uppercase tracking-widest text-xs sm:text-sm">Gyro-aware
+                                tuning</h3>
+                            <p class="mt-2 sm:mt-3 text-[10px] sm:text-xs leading-relaxed text-slate-400">Dial in camera movement and fine aim with
+                                calibration settings that support precise adjustments.</p>
+                        </div>
+                        <div class="bg-card-dark border border-border-dark p-6 sm:p-8 chamfer hover:border-primary/40 transition-colors">
+                            <span class="material-symbols-sharp text-primary text-2xl sm:text-3xl">auto_awesome</span>
+                            <h3 class="mt-4 sm:mt-6 text-white font-display font-bold uppercase tracking-widest text-xs sm:text-sm">Advanced action
+                                logic</h3>
+                            <p class="mt-2 sm:mt-3 text-[10px] sm:text-xs leading-relaxed text-slate-400">Documented workflows cover rapid actions,
+                                directional casting, and other control patterns that standard mappers miss.</p>
+                        </div>
+                        <div class="bg-card-dark border border-border-dark p-6 sm:p-8 chamfer hover:border-primary/40 transition-colors">
+                            <span class="material-symbols-sharp text-primary text-2xl sm:text-3xl">grid_view</span>
+                            <h3 class="mt-4 sm:mt-6 text-white font-display font-bold uppercase tracking-widest text-xs sm:text-sm">Reusable layouts</h3>
+                            <p class="mt-2 sm:mt-3 text-[10px] sm:text-xs leading-relaxed text-slate-400">The docs are organized to help you go from a
+                                first profile to a repeatable setup across multiple games.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-24" data-reveal="true">
+                    <div class="glass chamfer p-8 md:p-10">
+                        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-10">
+                            <div>
+                                <div class="text-primary text-xs font-bold uppercase tracking-[0.3em]">Recommended flow</div>
+                                <h2 class="mt-3 text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-white">
+                                    Read these in order</h2>
+                            </div>
+                            <p class="max-w-2xl text-sm leading-relaxed text-slate-400">If this is your first time, move through
+                                the documentation in sequence so your permissions, controller pairing, and layout logic all line up.
+                            </p>
+                        </div>
+                        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                            <div class="border border-white/10 bg-black/20 p-6 chamfer-sm">
+                                <div class="w-12 h-12 bg-primary text-background-dark flex items-center justify-center font-display font-black text-xl chamfer-sm">01</div>
+                                <h3 class="mt-6 text-white font-display text-xl font-bold uppercase tracking-tight">Activate the
+                                    stack</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-400">Use the setup guide to start Shizuku,
+                                    validate permissions, and confirm Axis is ready before mapping.</p>
+                            </div>
+                            <div class="border border-white/10 bg-black/20 p-6 chamfer-sm">
+                                <div class="w-12 h-12 border-2 border-primary text-primary flex items-center justify-center font-display font-black text-xl chamfer-sm">02</div>
+                                <h3 class="mt-6 text-white font-display text-xl font-bold uppercase tracking-tight">Build the
+                                    layout</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-400">Map sticks, buttons, and camera zones, then
+                                    test them inside the target game with a simple baseline profile first.</p>
+                            </div>
+                            <div class="border border-white/10 bg-black/20 p-6 chamfer-sm">
+                                <div class="w-12 h-12 border-2 border-primary text-primary flex items-center justify-center font-display font-black text-xl chamfer-sm">03</div>
+                                <h3 class="mt-6 text-white font-display text-xl font-bold uppercase tracking-tight">Tune and
+                                    recover</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-400">Use the troubleshooting guide when something
+                                    feels off, then come back and refine the mapping or calibration values.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]" data-reveal="true">
+                    <div class="glass chamfer p-8 md:p-10">
+                        <div class="text-primary text-xs font-bold uppercase tracking-[0.3em]">What to expect</div>
+                        <h2 class="mt-3 text-3xl font-display font-bold uppercase tracking-tight text-white">A practical docs
+                            path, not just feature lists</h2>
+                        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-slate-400">This overview is built to get users from
+                            “I installed it” to “my controller feels right in-game.” The next pages focus on sequence, device prep,
+                            layout logic, and recovery steps rather than throwing isolated settings at you.</p>
+                        <div class="mt-8 grid gap-4 md:grid-cols-2">
+                            <div class="border border-white/10 bg-black/20 p-5 chamfer-sm">
+                                <div class="text-[10px] uppercase tracking-[0.25em] text-primary font-bold">Best for</div>
+                                <p class="mt-3 text-sm text-slate-300">First-time setup, controller pairing, camera tuning, and
+                                    repeatable multi-game workflows.</p>
+                            </div>
+                            <div class="border border-white/10 bg-black/20 p-5 chamfer-sm">
+                                <div class="text-[10px] uppercase tracking-[0.25em] text-primary font-bold">Keep in mind</div>
+                                <p class="mt-3 text-sm text-slate-300">Start simple, save a working baseline, then expand into
+                                    advanced actions once the core profile is stable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="glass chamfer p-8">
+                        <div class="text-primary text-xs font-bold uppercase tracking-[0.3em]">Quick links</div>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="../index.html"
+                                    class="flex items-center justify-between text-slate-300 hover:text-primary transition-colors"><span>HOME</span><span class="material-symbols-sharp text-base">home</span></a></li>
+                            <li><a href="setup.html"
+                                    class="flex items-center justify-between text-slate-300 hover:text-primary transition-colors"><span>Installation &amp; Setup</span><span class="material-symbols-sharp text-base">arrow_forward</span></a></li>
+                            <li><a href="mapping.html"
+                                    class="flex items-center justify-between text-slate-300 hover:text-primary transition-colors"><span>Mapping Guide</span><span class="material-symbols-sharp text-base">arrow_forward</span></a></li>
+                            <li><a href="troubleshooting.html"
+                                    class="flex items-center justify-between text-slate-300 hover:text-primary transition-colors"><span>Troubleshooting</span><span class="material-symbols-sharp text-base">arrow_forward</span></a></li>
+                        </ul>
+                        <div class="mt-8 border border-primary/20 bg-primary/10 p-5 chamfer-sm">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-sharp text-primary text-2xl">info</span>
+                                <p class="text-sm leading-relaxed text-slate-300">The redesigned overview intentionally omits the
+                                    sliding text behavior and keeps the entry points static for cleaner reading.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </section>
+            </div>
+        </main>
+
+        <footer class="bg-background-dark border-t border-white/5 pt-20 pb-10 px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 40" height="32">
+                            <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                            <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                        </svg>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+                        The next generation of precision touch mapping. Redefining what mobile gaming control looks like for
+                        professional players.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                            href="#">
+                            <span class="material-symbols-sharp text-xl">share</span>
+                        </a>
+                        <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                            href="#">
+                            <span class="material-symbols-sharp text-xl">forum</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="../index.html#features">Features Overview</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="../index.html#setup">Setup Guide</a></li>
+                        <li><a class="text-primary text-sm transition-colors block w-fit"
+                                href="index.html">Documentation</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Community Layouts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Privacy Policy</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Terms of Service</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Network</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Support Portal</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Developer API</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="max-w-7xl mx-auto flex flex-col items-start gap-4 border-t border-white/5 pt-10 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-slate-600 text-xs uppercase tracking-widest">© 2026 AXIS GAMEPAD PRO. All rights reserved.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-slate-500 text-xs uppercase tracking-widest">Server Status: Operational</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
