@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Privacy Policy | Axis Gamepad Pro</title>
+    <meta name="description"
+        content="Privacy Policy for Axis Gamepad Pro describing data collection, Android app permissions, and Google Play integration." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37",
+                        "background-dark": "#0A0A0A",
+                        surface: "#121212",
+                        "card-dark": "#121212",
+                        "border-dark": "#1C1C1C",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        glow: "0 0 30px rgba(212, 175, 55, 0.16)",
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/stealth.css">
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 32%),
+                #0A0A0A;
+        }
+
+        .axis-grid {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-body text-slate-300 antialiased overflow-x-hidden selection:bg-primary/20">
+    <div class="relative min-h-screen axis-grid">
+        <nav class="glass sticky top-0 z-50 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+                <a href="../index.html" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" class="h-8 lg:hidden">
+                        <text x="5" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" class="h-10 hidden lg:block">
+                        <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                        <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                    </svg>
+                </a>
+                <div class="hidden lg:flex items-center gap-8 xl:gap-10">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-widest"
+                        href="../index.html">HOME</a>
+                    <div class="relative group">
+                        <a class="text-sm font-medium text-slate-300 hover:text-primary uppercase tracking-widest flex items-center gap-1"
+                            href="../docs/index.html">
+                            Docs
+                            <svg class="w-4 h-4 fill-current transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                        </a>
+                        <div
+                            class="absolute top-full left-0 pt-2 w-60 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-[70]">
+                            <div class="glass chamfer-sm p-2 flex flex-col">
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="../docs/index.html">Overview</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="../docs/setup.html">Installation &amp; Setup</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="../docs/mapping.html">Mapping Guide</a>
+                                <a class="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-primary hover:bg-white/5 transition-colors"
+                                    href="../docs/troubleshooting.html">Troubleshooting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="flex h-10 w-10 shrink-0 items-center justify-center text-white lg:hidden" id="mobile-menu-btn"
+                    aria-label="Toggle navigation" aria-expanded="false">
+                    <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+                </button>
+                <button type="button"
+                    class="hidden shrink-0 items-center justify-center bg-primary px-6 py-3 text-center text-xs font-black uppercase leading-[16px] text-background-dark shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all hover:bg-primary/85 xl:inline-flex chamfer-sm font-display">
+                    Coming Soon
+                </button>
+            </div>
+            <div class="hidden flex-col gap-4 border-t border-white/10 px-6 pb-6 pt-2 lg:hidden" id="mobile-nav">
+                <a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 block w-fit"
+                    href="../index.html">HOME</a>
+                <div class="flex flex-col gap-2 pt-2 border-t border-white/5">
+                    <span class="text-slate-300 hover:text-primary text-sm font-medium transition-colors py-2 flex items-center gap-1 uppercase tracking-widest">
+                        Docs <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.0006L7.75732 10.758L9.17154 9.34375L12 12.1722L14.8284 9.34375L16.2426 10.758L12 15.0006Z"></path></svg>
+                    </span>
+                    <div class="flex flex-col gap-3 pl-4 border-l border-white/10 ml-2 mt-1">
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="../docs/index.html">Overview</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="../docs/setup.html">Installation &amp; Setup</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="../docs/mapping.html">Mapping Guide</a>
+                        <a class="text-slate-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors"
+                            href="../docs/troubleshooting.html">Troubleshooting</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="px-6 pb-24 pt-10">
+            <div class="max-w-4xl mx-auto glass chamfer p-8 md:p-12" data-reveal="true">
+                <div class="inline-flex items-center gap-2 text-primary font-display font-bold text-sm tracking-[0.3em] uppercase mb-6">
+                    <span class="h-px w-8 bg-primary"></span>
+                    Legal
+                </div>
+                <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tighter uppercase text-white mb-2">
+                    Privacy Policy
+                </h1>
+                <p class="text-slate-500 text-sm font-mono uppercase tracking-widest mb-10 pb-10 border-b border-border-dark">Last Updated: March 2026</p>
+
+                <div class="prose prose-invert max-w-none text-slate-300/90 text-[15px] leading-relaxed">
+                    <p class="mb-6">At Stealth Tech Gaming ("we", "us", or "our"), your privacy is a priority. This Privacy Policy details the types of information we may collect from you or that you may provide when you visit the <a href="https://axisgamepad.com" class="text-primary hover:text-white transition-colors">axisgamepad.com</a> website and use the Axis Gamepad Pro Android application (collectively, the "Services"), and our practices for handling that information.</p>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">01</span> What We Collect
+                    </h2>
+                    <p class="mb-4">Given the nature of our application—system-level touch injection—we limit our data collection strictly to operational necessities. We <strong>do not</strong> collect keystrokes outside of configured mappings, nor do we analyze your screen content.</p>
+                    <ul class="list-none space-y-3 pl-0 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>Device Information:</strong> We may collect non-identifiable information such as your Android version, device model, and controller type (e.g., Xbox Series, DualSense) to optimize injection protocols and mapping behaviors.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>Purchase Information:</strong> If you elect to upgrade to Axis Gamepad Pro, payment processing is handled entirely by Google Play. We only receive an anonymous purchase token confirming your pro status. We do not process or store credit card numbers.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>AdMob Advertising Data:</strong> For the free tier of the application, we utilize Google AdMob. AdMob may collect and use data (such as device IDs, ad metrics, and IP addresses) to provide personalized advertisements. You can modify your ad preferences via your Android settings.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>Controller Mapping Data:</strong> The profiles and configurations you create are stored locally on your device unless you explicitly choose to export or share them.</span>
+                        </li>
+                    </ul>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">02</span> The Shizuku Permission
+                    </h2>
+                    <p class="mb-6">Axis Gamepad Pro fundamentally operates via System Touch Delivery, requiring the use of Shizuku (or Root) to attain ADB-level permissions. We use these permissions <strong>exclusively</strong> to inject standard touch events generated cleanly by your paired game controller. We explicitly do not use these elevated privileges to access private files, intercept network traffic, read personal communications, or modify other applications.</p>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">03</span> How We Use Your Information
+                    </h2>
+                    <p class="mb-4">Information we collect is utilized in the following ways:</p>
+                    <ul class="list-none space-y-3 pl-0 mb-8">
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> To provide, maintain, and improve the technical functionality of Axis Gamepad Pro.</li>
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> To rapidly troubleshoot mapping logic across varying Android device models.</li>
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> To verify Pro tier entitlement natively to prevent tampering while supporting offline activation.</li>
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> To serve relevant advertisements (free tier only) via Google AdMob.</li>
+                    </ul>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">04</span> Third-Party Services
+                    </h2>
+                    <p class="mb-6">The application utilizes standard, trusted third-party services whose privacy practices we do not directly control:</p>
+                    <ul class="list-none space-y-3 pl-0 mb-8">
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> <strong>Google Play Services:</strong> Used for in-app billing verification. <a href="https://policies.google.com/privacy" target="_blank" class="text-primary hover:underline">Google Privacy Policy</a></li>
+                        <li class="flex items-start gap-3"><span class="text-primary mt-1">•</span> <strong>Google AdMob:</strong> Used for advertising delivery. <a href="https://policies.google.com/privacy" target="_blank" class="text-primary hover:underline">Google Privacy Policy</a></li>
+                    </ul>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">05</span> Data Security & Retention
+                    </h2>
+                    <p class="mb-6">Because Axis Gamepad Pro is an on-device utility, almost all primary data (mappings, gyro tuning, macros) stays completely offline on your device storage. Any telemetry or entitlement tracking we manage uses industry-standard encryption protocols. We only retain any aggregated analytical data for as long as necessary to monitor the health of the application's performance across Android ecosystem changes.</p>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">06</span> Children's Privacy
+                    </h2>
+                    <p class="mb-6">Our Services are intended for a general audience and are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13 inline with COPPA regulations.</p>
+
+                    <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-white mt-12 mb-6 flex items-center gap-3">
+                        <span class="text-primary font-black">07</span> Contact Information
+                    </h2>
+                    <p class="mb-6">If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle data locally vs remotely, please contact us at:</p>
+                    <div class="glass chamfer-sm p-6 border-l-4 border-l-primary text-white">
+                        <p class="font-bold uppercase tracking-widest text-xs text-slate-400 mb-2">Legal Team</p>
+                        <p>legal@axisgamepad.com</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-background-dark border-t border-white/5 pt-20 pb-10 px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 40" height="32">
+                            <text x="10" y="30" font-family="sans-serif" font-size="28" font-weight="900" fill="#dcb02e" letter-spacing="-0.05em">AXIS</text>
+                            <text x="92" y="28" font-family="sans-serif" font-size="16" font-weight="100" fill="#FFFFFF" letter-spacing="0.2em">GAMEPAD PRO</text>
+                        </svg>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+                        The next generation of precision touch mapping. Redefining what mobile gaming control looks like for
+                        professional players.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                            href="#">
+                            <span class="material-symbols-sharp text-xl">share</span>
+                        </a>
+                        <a class="w-10 h-10 bg-surface rounded flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors text-slate-400 hover:text-primary"
+                            href="#">
+                            <span class="material-symbols-sharp text-xl">forum</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="../index.html#features">Features Overview</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="../index.html#setup">Setup Guide</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="../docs/index.html">Documentation</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Community Layouts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-primary text-sm transition-colors block w-fit"
+                                href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Network</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Support Portal</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">Developer API</a></li>
+                        <li><a class="text-slate-500 hover:text-primary text-sm transition-colors block w-fit"
+                                href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="max-w-7xl mx-auto flex flex-col items-start gap-4 border-t border-white/5 pt-10 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-slate-600 text-xs uppercase tracking-widest">© 2026 AXIS GAMEPAD PRO. All rights reserved.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-slate-500 text-xs uppercase tracking-widest">Server Status: Operational</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
